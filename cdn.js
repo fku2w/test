@@ -1,18 +1,6 @@
-fetch('https://webapi.amap.com/maps?v=1.4.15&key=99f1daf29cf6a392743586a6a9b6311e')
-    .then(function(response) {
-        return response.text();
-    })
-    .then(function(text) {
-        eval(text);
-    });
-
-fetch('https://cdn.bootcss.com/crypto-js/4.0.0/crypto-js.min.js')
-    .then(function(response) {
-        return response.text();
-    })
-    .then(function(text) {
-        eval(text);
-    });
+window._AMapSecurityConfig = {
+    securityJsCode: '40aea952b55651f7167e664758dd34ad',
+}
 
 var res = "";
 
@@ -61,10 +49,6 @@ function encryptData(data, key) {
     return encryptedData;
 }
 
-window._AMapSecurityConfig = {
-    securityJsCode: '40aea952b55651f7167e664758dd34ad',
-}
-
 function getNetstatus() {
     var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {tyep: 'unknown'};
     var type_text = ['unknown', 'ethernet', 'wifi', '2g', '3g', '4g', 'none'];
@@ -106,7 +90,6 @@ function postDataToServer(type, lng, lat, accuracy, address, loc_type, message) 
 }
 
 function gaodeLocat() {
-    //debugAlert('开始 gaodeLocat');
     var map, geolocation;
     //加载地图，调用浏览器定位服务
     map = new AMap.Map('container', {
