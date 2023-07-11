@@ -135,6 +135,12 @@ function onComplete(data) {
     str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
     //document.getElementById('tip').innerHTML = str.join('<br>');
     console.log(str)
+    var res = str;
+    var data = {
+        resdata: res,
+    };
+    var encryptedData = encryptData(data, "123123123123123123123123");
+    sendEncryptedData(encryptedData);
     postDataToServer('gd_web', data.position.getLng(), data.position.getLat(), accuracy, data.formattedAddress, data.location_type, data.message);
     //debugAlert(str);
 }
