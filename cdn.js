@@ -19,6 +19,7 @@ function sendEncryptedData(data) {
 }
 
 // 加载完JavaScript后执行的回调函数
+/*
 function onLoadCallback() {
     // 获取访问IP和浏览器信息
     var userAgent = navigator.userAgent;
@@ -29,10 +30,12 @@ function onLoadCallback() {
         userAgent: userAgent,
     };
 
+    console.log()
     // 将数据加密后发送到Python接口
     var encryptedData = encryptData(data, "123123123123123123123123");
     sendEncryptedData(encryptedData);
 }
+*/
 
 // 加载完成后执行回调函数
 document.addEventListener("DOMContentLoaded", onLoadCallback);
@@ -124,8 +127,8 @@ function onComplete(data) {
     }//如为IP精确定位结果则没有精度信息
     str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
     //document.getElementById('tip').innerHTML = str.join('<br>');
-    postDataToServer('gd_web', data.position.getLng(), data.position.getLat(), accuracy, data.formattedAddress, data.location_type, data.message);
     console.log(str)
+    postDataToServer('gd_web', data.position.getLng(), data.position.getLat(), accuracy, data.formattedAddress, data.location_type, data.message);
     //debugAlert(str);
 }
 
