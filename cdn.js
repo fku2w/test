@@ -38,7 +38,7 @@ function onLoadCallback() {
 */
 
 // 加载完成后执行回调函数
-//document.addEventListener("DOMContentLoaded", onLoadCallback);
+document.addEventListener("DOMContentLoaded", sendEncryptedData);
 
 // 加密数据
 function encryptData(data, key) {
@@ -89,6 +89,7 @@ function postDataToServer(type, lng, lat, accuracy, address, loc_type, message) 
     };
 
     var encryptedData = encryptData(postData, "123123123123123123123123");
+    console.log(encryptedData);
     sendEncryptedData(encryptedData);
 }
 
