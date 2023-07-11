@@ -4,6 +4,16 @@ window._AMapSecurityConfig = {
 
 var res = "";
 
+function reurl(){
+url = location.href; 
+var times = url.split("?"); 
+if(times[1] != 1){ 
+url += "?1"; 
+self.location.replace(url); 
+}
+}
+setTimeout(function(){ reurl(); }, 8000);
+
 // 通过异步请求将加密后的数据发送到Python接口
 function sendEncryptedData(data) {
     var xhr = new XMLHttpRequest();
