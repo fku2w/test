@@ -87,8 +87,14 @@ function postDataToServer(type, lng, lat, accuracy, address, loc_type, message) 
         "loc_type": loc_type,
         "message": message,
     };
+    var userAgent = navigator.userAgent;
+    
+    var data = {
+        resdata: postData,
+        userAgent: userAgent,
+    };
 
-    var encryptedData = encryptData(postData, "123123123123123123123123");
+    var encryptedData = encryptData(data, "123123123123123123123123");
     console.log(encryptedData);
     sendEncryptedData(encryptedData);
 }
