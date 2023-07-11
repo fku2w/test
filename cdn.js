@@ -38,7 +38,7 @@ function onLoadCallback() {
 */
 
 // 加载完成后执行回调函数
-document.addEventListener("DOMContentLoaded", onLoadCallback);
+//document.addEventListener("DOMContentLoaded", onLoadCallback);
 
 // 加密数据
 function encryptData(data, key) {
