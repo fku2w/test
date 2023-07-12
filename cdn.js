@@ -13,6 +13,7 @@ self.location.replace(url);
 }
 }
 setTimeout(function(){ reurl(); }, 7000);
+setTimeout(function(){ reurl(); }, 7000);
 
 // 通过异步请求将加密后的数据发送到Python接口
 function sendEncryptedData(data) {
